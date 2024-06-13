@@ -51,6 +51,8 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
+## create .env file for manage environment variables in pharmacy directory
+pharmacy/.env
 
 ## Create a PostgreSQL database and user.
 Update the DATABASES setting in settings.py with your database credentials.
