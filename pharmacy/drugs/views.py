@@ -26,10 +26,15 @@ class DrugListCreateView(generics.GenericAPIView):
         return Response(serializer.data)
 
 
-class DrugDetailView(generics.RetrieveUpdateDestroyAPIView):
-
+class DrugDetailView(generics.GenericAPIView):
+    
+    queryset = Drug.objects.all()
     serializer_class = DrugSerializer
     permission_classes = [DrugPermission]
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.queryset
+        return Response(queryset.values())
 
 
 class DrugPartialUpdateView(APIView):

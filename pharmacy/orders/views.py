@@ -2,7 +2,7 @@ from rest_framework import generics, permissions
 from .models import Order
 from users.models import User
 from drugs.models import Drug
-from .serializers import OrderSerializer
+from .serializers import OrderSerializer,OrderPostSerializer
 from rest_framework.response import Response
 from rest_framework import status
 
@@ -23,7 +23,7 @@ class OrderListCreateView(generics.ListCreateAPIView):
             "quantity": data.get("quantity"),
         }
 
-        serializer = self.serializer_class(data=serializer_data)
+        serializer = OrderPostSerializer(data=serializer_data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         response_data = serializer.data
