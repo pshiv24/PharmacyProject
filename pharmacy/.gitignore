@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Distribution / packaging
+.Python
+
+# Django specific files
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.coverage
+.coverage.*
+
+# Editor directories and files
+.vscode/
+
+# Environments
+.env
+.venv/
+
+# macOS specific files
+.DS_Store
+*.DS_Store
+
